@@ -24,7 +24,11 @@ public class HelloController {
 
     @RequestMapping("hello")
     public String sayHello() {
-        /*return helloBusiness.sayHello();*/
+        return helloBusiness.sayHello();
+    }
+
+    @RequestMapping("user")
+    public String userMessage() {
         return userMapper.selectById(1L).toString();
     }
 }

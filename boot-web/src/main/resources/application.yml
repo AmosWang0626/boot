@@ -3,10 +3,10 @@ spring:
     active: dev
 
   datasource:
-    name: root
-    password: root
-    url: jdbc:mysql://127.0.0.1:3306/boot?useUnicode=true&amp;characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/boot?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8
 
 mybatis:
   configuration:
