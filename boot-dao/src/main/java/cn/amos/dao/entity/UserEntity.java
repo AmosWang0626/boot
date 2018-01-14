@@ -1,6 +1,16 @@
 package cn.amos.dao.entity;
 
 /**
+ * CREATE TABLE `user` (
+ * `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+ * `NAME` varchar(128) DEFAULT NULL COMMENT '用户名',
+ * `AGE` tinyint(4) DEFAULT NULL COMMENT '年龄',
+ * `PHONE_NO` varchar(11) DEFAULT NULL COMMENT '手机号',
+ * `ADDRESS` varchar(255) DEFAULT NULL COMMENT '地址',
+ * `IDENTITY_NO` varchar(18) DEFAULT NULL COMMENT '身份证号',
+ * PRIMARY KEY (`ID`)
+ * ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+ * <p>
  * PROJECT: boot
  * DATE: 2018/1/12
  *
@@ -11,6 +21,7 @@ public class UserEntity {
     private Long id;
     private String name;
     private Integer age;
+    private String phoneNo;
     private String address;
     private String identityNo;
 
@@ -38,6 +49,14 @@ public class UserEntity {
         this.age = age;
     }
 
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -52,5 +71,17 @@ public class UserEntity {
 
     public void setIdentityNo(String identityNo) {
         this.identityNo = identityNo;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", address='" + address + '\'' +
+                ", identityNo='" + identityNo + '\'' +
+                '}';
     }
 }

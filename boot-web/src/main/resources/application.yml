@@ -1,3 +1,13 @@
 spring:
   profiles:
-    active: prod
+    active: dev
+
+  datasource:
+    name: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/boot?useUnicode=true&amp;characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  configuration:
+   map-underscore-to-camel-case: true
