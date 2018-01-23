@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>user</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/boot-single.css"/>
+</head>
+<body>
+<div class="col-md-offset-1 col-md-10">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Hello, world!</h1>
+            <p>Here is the information for all users!</p>
+            <p>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#msgModal">
+                    Learn more
+                </button>
+            </p>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>用户名</th>
+            <th>年龄</th>
+            <th>手机号</th>
+        </tr>
+        </thead>
+        <tbody th:each="user:${pageResult.rows}">
+        <tr>
+            <th scope="row" th:text="${user.id}">1</th>
+            <td th:text="${user.name}">aaa</td>
+            <td th:text="${user.age}">bbb</td>
+            <td th:text="${user.phoneNo}">ccc</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- 分页 -->
+    <nav aria-label="Page navigation" data-th-align="center">
+        <ul class="pagination pagination-lg">
+            <li th:class="${pageResult.first}?'disabled'">
+                <a th:if="${pageResult.first}" href="javascript:void(0);">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+                <a th:if="${!pageResult.first}"
+                   th:href="@{/user/page(page=${pageResult.page -1},size=${pageResult.size})}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li th:each="index:${#numbers.sequence(1,pageResult.totalPages)}"
+                th:classappend="${index==pageResult.page}?'active'">
+                <a th:text="${index}" th:href="@{/user/page(page=${index},size=${pageResult.size})}">1</a>
+            </li>
+            <li th:class="${pageResult.last}?'disabled'">
+                <a th:if="${pageResult.last}" href="javascript:void(0);">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                <a th:if="${!pageResult.last}"
+                   th:href="@{/user/page(page=${pageResult.page +1},size=${pageResult.size})}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li><span th:text="'总记录数'+${pageResult.total}+'条'">总条数1条</span></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                Here is the information for all users!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 先导入jquery, 再导入bootstrap.js -->
+<script src="/static/jquery.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+</body>
+</html>

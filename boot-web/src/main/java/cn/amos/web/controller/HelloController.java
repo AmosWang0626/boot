@@ -1,34 +1,33 @@
 package cn.amos.web.controller;
 
 import cn.amos.core.business.HelloBusiness;
-import cn.amos.dao.mappers.UserMapper;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
 /**
  * PROJECT: boot
- * DATE: 2018/1/11
  *
  * @author DaoYuanWang
+ * @date 2018/1/11
  */
-@RestController
+@Controller
 public class HelloController {
 
     @Resource
     private HelloBusiness helloBusiness;
 
-    @Resource
-    private UserMapper userMapper;
-
-    @RequestMapping("hello")
+    @GetMapping("hello")
+    @ResponseBody
     public String sayHello() {
         return helloBusiness.sayHello();
     }
 
-    @RequestMapping("user")
-    public String userMessage() {
-        return userMapper.selectById(1L).toString();
+    @RequestMapping("page")
+    public String helloPage() {
+        return "parameterError";
     }
 }

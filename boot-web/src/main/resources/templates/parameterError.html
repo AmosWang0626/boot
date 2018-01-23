@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>ParameterError</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/boot-single.css"/>
+</head>
+<body>
+
+<div class="col-md-offset-1 col-md-10">
+    <!-- 巨幕 -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Hello, world!</h1>
+            <p>参数不对呦!</p>
+            <p>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#msgModal">
+                    Learn more
+                </button>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <pre>参数错误,请传入页码以及每页显示记录数(http://127.0.0.1:8080/*/page/?page=1&amp;size=10)</pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 先导入jquery, 再导入bootstrap.js -->
+<script src="/static/jquery.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+</body>
+</html>

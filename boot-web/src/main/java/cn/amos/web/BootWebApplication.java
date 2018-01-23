@@ -3,6 +3,7 @@ package cn.amos.web;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("cn.amos")
 @MapperScan("cn.amos.dao.mappers")
-@EnableAutoConfiguration
+@SpringBootApplication
 public class BootWebApplication {
 
     public static void main(String[] args) {
