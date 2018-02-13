@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -39,18 +38,11 @@ public class UserController {
         List<UserEntity> applyEntities = userMapper.selectByPage(pageModel);
         List<UserEntity> applyEntitiesAll = userMapper.selectAll();
         PageResult<UserEntity> pageResult = new PageResult<>();
-        pageResult.setPage(page);
-        pageResult.setSize(size);
-        // 总记录数量
+        // 总记录数量 || 当前页记录数量 || 记录数据列表
         pageResult.setTotal(applyEntitiesAll.size());
-        // 当前页记录数量
         pageResult.setNumber(applyEntities.size());
-        // 记录数据列表
         pageResult.setRows(applyEntities);
-        // 第一个 || 最后一个
-        pageResult.setTotalPages();
-        pageResult.setFirst();
-        pageResult.setLast();
+        pageResult.finish(page, size);
 
         model.addAttribute("pageResult", pageResult);
         return "user";

@@ -45,6 +45,20 @@ public class PageResult<E> implements Serializable {
      */
     private List<E> rows;
 
+    /**
+     * 最终执行,设置最终参数
+     *
+     * @param page 当前页码
+     * @param size 每页多少数据
+     */
+    public void finish(int page, int size) {
+        setPage(page);
+        setSize(size);
+        setTotalPages();
+        setFirst();
+        setLast();
+    }
+
     public int getPage() {
         return page;
     }
