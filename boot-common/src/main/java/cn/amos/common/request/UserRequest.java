@@ -1,22 +1,12 @@
-package cn.amos.dao.entity;
-
-import com.alibaba.fastjson.JSON;
-
-import java.util.Date;
+package cn.amos.common.request;
 
 /**
- * PROJECT: boot
- * DATE: 2018/1/12
+ * PROJECT: boot-single
  *
  * @author DaoYuanWang
+ * @date 2018/1/18
  */
-public class UserEntity {
-
-    private Long id;
-    /**
-     * 用户编号
-     */
-    private String userId;
+public class UserRequest {
     /**
      * 用户名字
      */
@@ -37,30 +27,6 @@ public class UserEntity {
      * 身份证号
      */
     private String identityNo;
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
     public String getName() {
         return name;
@@ -100,26 +66,5 @@ public class UserEntity {
 
     public void setIdentityNo(String identityNo) {
         this.identityNo = identityNo;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    @Override
-    public String toString() {
-        return JSON.toJSONString(this);
     }
 }
