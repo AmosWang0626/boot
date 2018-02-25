@@ -1,21 +1,55 @@
 package cn.amos.web.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+import java.util.Map;
 
 /**
- * PROJECT: boot-single
+ * PROJECT: boot
+ * DATE: 2018/2/25
  *
- * @author DaoYuanWang
- * @date 2018/1/17
+ * @author DaoyuanWang
  */
-@Configuration
-public class AppConfig extends WebMvcConfigurerAdapter {
+@Component
+@ConfigurationProperties(prefix = "other")
+public class AppConfig {
+    private Map<String, String> mongoDB;
+    private Map<String, String> emay;
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-        super.addResourceHandlers(registry);
+    public Map<String, String> getMongoDB() {
+        return mongoDB;
+    }
+
+    public void setMongoDB(Map<String, String> mongoDB) {
+        this.mongoDB = mongoDB;
+    }
+
+    public Map<String, String> getEmay() {
+        return emay;
+    }
+
+    public void setEmay(Map<String, String> emay) {
+        this.emay = emay;
+    }
+
+    public String getMongoDBUser() {
+        return mongoDB.get("user");
+    }
+
+    public String getMongoDBUri() {
+        return mongoDB.get("uri");
+    }
+
+    public String getMongoDBPassword() {
+        return mongoDB.get("password");
+    }
+
+    public String getEMayUri() {
+        return emay.get("uri");
+    }
+
+    public String getEMaySign() {
+        return emay.get("sign");
     }
 }
