@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Error</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/boot-single.css"/>
+</head>
+<body>
+
+<div class="col-md-offset-1 col-md-10">
+    <div class="jumbotron">
+        <div class="container">
+            <p>错误页面!</p>
+            <p>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#msgModal">
+                    详细信息
+                </button>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <pre><a href="http://127.0.0.1:8080/user?page=1&size=10" target="_blank">用户管理（localhost:8080/user?page=1&size=10）</a></pre>
+                <pre><a href="http://127.0.0.1:8080/h2" target="_blank">h2database 数据管理（进去后无需修改参数，直接连接即可）</a></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 先导入jquery, 再导入bootstrap.js -->
+<script src="/static/jquery.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+</body>
+</html>
