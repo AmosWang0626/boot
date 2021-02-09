@@ -3,7 +3,7 @@
     <parent>
         <artifactId>boot</artifactId>
         <groupId>cn.amos</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+        <!-- Current Project -->
         <dependency>
             <groupId>cn.amos</groupId>
             <artifactId>boot-common</artifactId>
@@ -25,6 +26,28 @@
         <dependency>
             <groupId>cn.amos</groupId>
             <artifactId>boot-client</artifactId>
+        </dependency>
+        <!-- Current Project End -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- base -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 </project>

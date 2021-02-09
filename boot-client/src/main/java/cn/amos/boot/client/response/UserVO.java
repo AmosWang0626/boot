@@ -1,7 +1,5 @@
 package cn.amos.boot.client.response;
 
-import com.alibaba.fastjson.JSON;
-
 /**
  * DESCRIPTION: UserVO
  *
@@ -94,6 +92,14 @@ public class UserVO {
 
     @Override
     public String toString() {
-        return JSON.toJSONString(this);
+        return "UserVO{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", age=" + age +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", address='" + address + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                '}';
     }
 }
