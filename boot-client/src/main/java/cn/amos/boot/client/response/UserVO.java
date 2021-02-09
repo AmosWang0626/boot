@@ -1,4 +1,4 @@
-package cn.amos.boot.common.response;
+package cn.amos.boot.client.response;
 
 import com.alibaba.fastjson.JSON;
 

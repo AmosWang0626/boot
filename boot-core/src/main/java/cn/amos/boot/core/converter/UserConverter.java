@@ -1,6 +1,6 @@
 package cn.amos.boot.core.converter;
 
-import cn.amos.boot.common.response.UserVO;
+import cn.amos.boot.client.response.UserVO;
 import cn.amos.boot.common.util.DateUtil;
 import cn.amos.boot.dao.entity.UserEntity;
 

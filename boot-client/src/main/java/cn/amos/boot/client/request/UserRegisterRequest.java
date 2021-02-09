@@ -1,4 +1,4 @@
-package cn.amos.boot.common.request;
+package cn.amos.boot.client.request;
 
 /**
  * boot

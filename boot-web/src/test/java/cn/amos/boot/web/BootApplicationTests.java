@@ -1,6 +1,6 @@
 package cn.amos.boot.web;
 
-import cn.amos.boot.common.request.UserRegisterRequest;
+import cn.amos.boot.client.request.UserRegisterRequest;
 import cn.amos.boot.core.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
